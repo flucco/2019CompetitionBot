@@ -11,6 +11,7 @@ import com.revrobotics.CANEncoder;
 import com.revrobotics.CANSparkMax;
 import com.revrobotics.CANSparkMaxLowLevel.MotorType;
 
+import edu.wpi.first.wpilibj.Spark;
 import edu.wpi.first.wpilibj.ADXRS450_Gyro;
 import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.SpeedControllerGroup;
@@ -28,24 +29,24 @@ public class DriveTrain extends Subsystem {
   // here. Call these from Commands.
 
   // Left motor controllers
-  private CANSparkMax left1 = new CANSparkMax(RobotMap.LEFT_DRIVE_1, MotorType.kBrushless);
-  private CANSparkMax left2 = new CANSparkMax(RobotMap.LEFT_DRIVE_2, MotorType.kBrushless);
-  private CANSparkMax left3 = new CANSparkMax(RobotMap.LEFT_DRIVE_3, MotorType.kBrushless);
+  private CANSparkMax leftMAX = new CANSparkMax(RobotMap.LEFT_DRIVE_MAX, MotorType.kBrushless);
+  private Spark left1 = new Spark(RobotMap.LEFT_DRIVE_1);
+  private Spark left2 = new Spark(RobotMap.LEFT_DRIVE_2);
 
-  private SpeedControllerGroup leftMotors = new SpeedControllerGroup(left1, left2, left3);
+  private SpeedControllerGroup leftMotors = new SpeedControllerGroup(leftMAX, left1, left2);
 
   // Right motor controllers
-  private CANSparkMax right1 = new CANSparkMax(RobotMap.RIGHT_DRIVE_1, MotorType.kBrushless);
-  private CANSparkMax right2 = new CANSparkMax(RobotMap.RIGHT_DRIVE_2, MotorType.kBrushless);
-  private CANSparkMax right3 = new CANSparkMax(RobotMap.RIGHT_DRIVE_3, MotorType.kBrushless);
+  private CANSparkMax rightMAX = new CANSparkMax(RobotMap.RIGHT_DRIVE_MAX, MotorType.kBrushless);
+  private Spark right1 = new Spark(RobotMap.RIGHT_DRIVE_1);
+  private Spark right2 = new Spark(RobotMap.RIGHT_DRIVE_1);
 
-  private SpeedControllerGroup rightMotors = new SpeedControllerGroup(right1, right2, right3);
+  private SpeedControllerGroup rightMotors = new SpeedControllerGroup(rightMAX, right1, right2);
 
   // Drive controller
   private DifferentialDrive drive = new DifferentialDrive(leftMotors, rightMotors);
 
-  private CANEncoder leftEncoder = left1.getEncoder();
-  private CANEncoder rightEncoder = right1.getEncoder();
+  private CANEncoder leftEncoder = leftMAX.getEncoder();
+  private CANEncoder rightEncoder = rightMAX.getEncoder();
 
   // Gyro
   private ADXRS450_Gyro gyro = new ADXRS450_Gyro();

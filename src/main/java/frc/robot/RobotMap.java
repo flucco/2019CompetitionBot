@@ -8,14 +8,14 @@ public class RobotMap {
     public static final int CAMERA_WIDTHPX = 320;
 
     //Left drive motors
-    public static final int LEFT_DRIVE_1 = 4;
-    public static final int LEFT_DRIVE_2 = 5;
-    public static final int LEFT_DRIVE_3 = 6;
+    public static final int LEFT_DRIVE_MAX = 4;
+    public static final int LEFT_DRIVE_1 = 5;
+    public static final int LEFT_DRIVE_2 = 6;
 
     //Right drive Motors
-    public static final int RIGHT_DRIVE_1 = 7;
-    public static final int RIGHT_DRIVE_2 = 8;
-    public static final int RIGHT_DRIVE_3 = 9;
+    public static final int RIGHT_DRIVE_MAX = 7;
+    public static final int RIGHT_DRIVE_1 = 8;
+    public static final int RIGHT_DRIVE_2 = 9;
 
     //Cargo Arm
     public static final int ARM_CARGO = 10;
