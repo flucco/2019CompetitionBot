@@ -38,8 +38,8 @@ public class RobotMap {
     public final static int LIMB_SOLENOID_CHANNEL_OUT = 3; 
     public final static int GS_RIGHT_SOLENOID_CHANNEL_IN = 4;
     public final static int GS_RIGHT_SOLENOID_CHANNEL_OUT = 5;
-    public final static int GS_LEFT_SOLENOID_CHANNEL_IN = 4;
-    public final static int GS_LEFT_SOLENOID_CHANNEL_OUT = 5;
+    public final static int GS_LEFT_SOLENOID_CHANNEL_IN = 6;
+    public final static int GS_LEFT_SOLENOID_CHANNEL_OUT = 7;
     public final static int PCM_ID = 0;
 
     //Joystick Buttons
